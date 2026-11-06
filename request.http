@@ -1,0 +1,72 @@
+POST http://127.0.0.1:8000/api/login
+Content-Type: application/json
+Accept: application/json
+
+{
+    "email": "bryan@example.com",
+    "password": "bryanexample"
+}
+
+###
+POST http://127.0.0.1:8000/api/register
+Content-Type: application/json
+Accept: application/json
+
+{
+    "name": "TILIN EXTREMO",
+    "email": "bryan2@example.com",
+    "password": "bryanexample",
+    "password_confirmation": "bryanexample"
+}
+
+//Rutas protegidas
+###
+
+GET http://127.0.0.1:8000/api/logout
+Content-Type: application/json
+Authorization: Bearer 7|99gFOiOTry7M1V6gPDtFugjRltsHeY8xAjOikZBEe70ea637
+
+###
+//Retorno de sus tareas registradas.
+GET http://127.0.0.1:8000/api/tareas
+Content-Type: application/json
+Authorization: Bearer 8|bUozlAbyjbaxxI3vx8cOOfEJfBRNOfgCyTGDJUfVdf596268
+
+###
+//Ver detalle mas especifico de la tarea.
+GET http://127.0.0.1:8000/api/tareas/5
+Content-Type: application/json
+Authorization: Bearer 8|bUozlAbyjbaxxI3vx8cOOfEJfBRNOfgCyTGDJUfVdf596268
+
+###
+POST http://127.0.0.1:8000/api/tareas
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer 8|bUozlAbyjbaxxI3vx8cOOfEJfBRNOfgCyTGDJUfVdf596268
+
+{
+    "titulo": "Tarea randomasdasd Dos",
+    "estado": "PENDIENTE",
+    "descripcion": "Descripcion dinamica",
+    "fecha_limite": "Fri, 06 Nov 2026 00:28:04 GMT"
+}
+###
+//Ver detalle mas especifico de la tarea.
+PUT http://127.0.0.1:8000/api/tareas/3
+Content-Type: application/json
+Authorization: Bearer 8|bUozlAbyjbaxxI3vx8cOOfEJfBRNOfgCyTGDJUfVdf596268
+
+{
+    "titulo": "Tarea1231231234444",
+    "estado": "PENDIENTE",
+    "descripcion": "Descripcion dinamica",
+    "fecha_limite": "Fri, 06 Nov 2026 00:28:04 GMT"
+    
+}
+
+###
+//Ver detalle mas especifico de la tarea.
+DELETE http://127.0.0.1:8000/api/tareas/3
+Content-Type: application/json
+Authorization: Bearer 8|bUozlAbyjbaxxI3vx8cOOfEJfBRNOfgCyTGDJUfVdf596268
+
